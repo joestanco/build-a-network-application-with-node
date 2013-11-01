@@ -1,0 +1,32 @@
+<% statuses.forEach( function( status ) { %>
+
+  <% statusLower = status.toLowerCase(); %>
+
+  <% if (eventResponses[statusLower] && eventResponses[statusLower].length) { %>
+
+    <div id="<%= statusLower %>-responses" class="response-list">
+
+      <h4>
+        <% if (status === "Maybe" ) { %>
+          Maybe Attending
+        <% } else { %>
+          <%= (status === "Yes") ? "Attending" : "Not Attending" %>
+        <% } %>
+      </h4>
+
+      <ul class="responses">
+      <% eventResponses[statusLower].forEach( function( response ){ %>
+        <li>
+          <img src="<%= response.gravatar %>" />
+          <span class="response-name"><%= response.name %></span>
+          <a class="glyphicon glyphicon-bin remove-link" href="/response/destroy/<%= eventId %>/<%= response._id %>"></a>
+        </li>
+      <% }); %>
+      </ul>
+
+    </div>
+
+  <% } %>
+
+<% }) %>
+

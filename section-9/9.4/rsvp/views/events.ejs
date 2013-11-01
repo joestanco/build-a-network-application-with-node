@@ -1,0 +1,22 @@
+
+    <h1>{{= pageTitle }}</h1>
+
+    {{ if (events && events.length) { }}
+
+      <ul id="event-list">
+      {{ events.forEach( function( event ){ }}
+        <li>
+          <a href="/event/{{= event._id }}">{{= event.title }}</a>
+          <span>
+            <a class="glyphicon glyphicon-edit" href="/event/update/{{= event._id }}"></a>
+            <a class="glyphicon glyphicon-bin remove-link" href="/event/destroy/{{= event._id }}"></a>
+          </span>
+        </li>
+      {{ }); }}
+      </ul>
+
+    {{ } else { }}
+
+      <p>No events to list.</p>
+
+    {{ } }}

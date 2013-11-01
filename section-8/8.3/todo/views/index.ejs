@@ -1,0 +1,28 @@
+
+    {{ include includes/header.ejs }}
+    
+    <form action='/save' method='post'>
+      <label for='todo-item'>Enter a task: </label>
+      <input type='text' id='todo-item' name='todo-item' placeholder='new todo' />
+      <input type='submit' value='Save' />
+    </form>
+    <p>
+
+    {{ function todo(item) { }}
+
+      <li>{{= item }}</li>
+
+    {{ } }}
+
+    {{ if (todos) { }}
+
+      <ul>{{ todos.map(todo) }}</ul>
+
+    {{ } else { }}
+
+      <em>No tasks to display</em>
+
+    {{ } }}
+
+    </p>
+

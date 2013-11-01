@@ -1,0 +1,15 @@
+
+    <form action="/event/create" method="post" class="cf">
+
+      <fieldset>
+        <p class="cf"><label for='event-title'>Title: </label>
+          <input type='text' id='event-title' name='event-title' placeholder='birthday party' value="{{= eventTitle }}" />
+        </p>
+
+        <p class="cf {{= err.errors && err.errors.date ? 'error' : '' }}"><label for='event-date'>Date: </label>
+          <input type='text' id='event-date' name='event-date' placeholder='MM/DD/YYYY' value="" />
+        </p>
+      </fieldset>
+
+      <input type='submit' value='Add Event' />
+    </form>

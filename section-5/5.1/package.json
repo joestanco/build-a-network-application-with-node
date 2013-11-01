@@ -1,0 +1,9 @@
+{
+  "name": "basic-web-server",
+  "version": "0.0.0",
+  "description": "Basic Web Server",
+  "main": "app.js",
+  "dependencies": {
+    "formidable": "~1.0.13"
+  }
+}

@@ -1,0 +1,36 @@
+
+  <div id="event-details">
+    <h1>{{= pageTitle }}</h1>
+
+    <div id="event-title">
+      <h3>{{= eventTitle }}</h3>
+      <span class="event-action-links">
+        <a class="glyphicon glyphicon-edit" href="/event/update/{{= eventId }}"></a>
+        <a class="glyphicon glyphicon-bin remove-link" href="/event/destroy/{{= eventId }}"></a>
+      </span>
+    </div>
+    <div id="event-date" class="cf">{{= eventDate }}</div>
+
+    <div class="response-buttonset cf">
+      <div class="button btn-yes">
+        <a class="glyphicon glyphicon-circle-ok" href="javascript:void 0;"></a><span>Yes</span>
+      </div>
+      <div class="button btn-no">
+        <a class="glyphicon glyphicon-circle-remove" href="javascript:void 0;"></a><span>No</span>
+      </div>
+      <div class="button btn-maybe">
+        <a class="glyphicon glyphicon-circle-question-mark" href="javascript:void 0;"></a><span>Maybe</span>
+      </div>
+    </div>
+
+  </div>
+
+  {{ include response_form.ejs }}
+
+  {{ include error_message.ejs }}
+  
+  <div id="response-lists" class="cf">
+    {{ statuses.forEach( function( status ) { }}
+      {{ include responses.ejs }}
+    {{ }) }}
+  </div>

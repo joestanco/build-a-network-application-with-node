@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{= appTitle }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!--[if gte IE 9]>
+      <style type="text/css">
+        .gradient { filter: none; }
+      </style>
+    <![endif]-->
+  </head>
+  <body {{= typeof className !== "undefined" ? 'class='+className : '' }}>
+
+  <div id="overlay"></div>
+  <div id="main" class="gradient shadow">
+
+    <h4 id="packt-logo">Packt Publishing</h4>
+    <ul id="nav">
+      <li class="home last"><a href="/">Home</a></li>
+    </ul>
+
+    <div class="container">{{- body }}</div>
+
+  </div>
+
+  </body>
+</html>

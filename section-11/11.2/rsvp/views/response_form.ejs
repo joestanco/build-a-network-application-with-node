@@ -1,0 +1,31 @@
+
+  <form id="add-response" action="/response/create/{{= eventId }}" method="post">
+
+    <input type="hidden" name="_method" value="put" />
+
+    <h4>RSVP to This Event</h4>
+    <fieldset>
+
+      <p class="cf"><label for='response-name'>Name: </label>
+        <input type='text' id='response-name' name='response-name' placeholder='First Last' />
+      </p>
+      <p class="cf"><label for='response-email'>Email: </label>
+        <input type='text' id='response-email' name='response-email' placeholder='yourname@youremail.com' />
+      </p>
+
+      <p class="cf"><label for='response-status'>Status: </label>
+        <select id='response-status' name='response-status'>
+          {{ statuses.forEach( function( status ){ }}
+            <option value="{{= status }}">{{= status }}</option>
+          {{ }) }}
+        </select>
+      </p>
+
+      <p class="buttonset">
+        <input class="btn-submit" type='submit' value='RSVP' />
+        <input class="btn-cancel" type='button' value='Cancel' /> 
+      </p>
+
+    </fieldset>
+
+  </form>

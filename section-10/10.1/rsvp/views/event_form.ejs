@@ -1,0 +1,11 @@
+
+    <h1>{{= pageTitle }}</h1>
+
+    {{ include error_message.ejs }}
+
+    {{ if (action === "create") { }}
+      {{ include event_create_form.ejs }}
+    {{ } else { }}
+      {{ include event_update_form.ejs }}
+    {{ } }}
+ 

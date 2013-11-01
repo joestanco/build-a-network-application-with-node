@@ -1,0 +1,13 @@
+
+  {{ if (err.message) { }}
+    <div class="error cf">
+    <span>{{= err.message }}</span>
+    {{ if (err.errors) { }}
+      <ul>
+        {{ for (key in err.errors) { }}
+          <li>{{= err.errors[key].path + ": " + err.errors[key].type }}</li>
+        {{ } }}
+      </ul>
+    {{ } }}
+    </div>
+  {{ } }}

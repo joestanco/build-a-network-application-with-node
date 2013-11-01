@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{= title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>{{= title }}</h1>
+    <p>{{= description }}</p>
+    <form action='/save' method='post'>
+      <label for='todo-item'>Enter a task: </label>
+      <input type='text' id='todo-item' name='todo-item' placeholder='new todo' />
+      <input type='submit' value='Save' />
+    </form>
+    <p>
+
+    {{ if (todos) { }}
+
+      <ul>
+      {{ todos.forEach(function(todo) { }}
+
+        <li>{{= todo }}</li>
+
+      {{ }); }}
+      </ul>
+
+    {{ } else { }}
+
+      <em>No tasks to display</em>
+
+    {{ } }}
+
+    </p>
+  </body>
+</html>

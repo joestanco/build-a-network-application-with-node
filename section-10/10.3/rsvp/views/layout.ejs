@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{= appTitle }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!--[if gte IE 9]>
+      <style type="text/css">
+        .gradient { filter: none; }
+      </style>
+    <![endif]-->
+  </head>
+  <body {{= typeof className !== "undefined" ? 'class='+className : '' }}>
+
+  <div id="overlay"></div>
+  <div id="main" class="gradient shadow">
+
+    <h4 id="packt-logo">Packt Publishing</h4>
+    <ul id="nav">
+      <li class="home first"><a href="/">Home</a></li>
+      <li class="add-event"><a href="/event/create">New Event</a></li>
+      <li class="event-list last"><a href="/events">Event List</a></li>
+    </ul>
+
+    <a href="javascript: location.reload();" id="notification"></a>
+    <div class="container">{{- body }}</div>
+
+  </div>
+
+  <div id="footer" class="cf">
+    <div>Icons courtesy of</br><a href="http://glyphicons.com/" target="_blank">Glyphicons.com</a></div>
+    <img src="/images/cc-by.png" width="88" height="31">
+  </div>
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="/javascripts/ejs.js"></script>
+  <script type="text/javascript" src="/javascripts/main.js" ></script>
+
+  </body>
+</html>

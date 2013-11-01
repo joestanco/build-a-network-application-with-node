@@ -1,0 +1,11 @@
+{
+  "name": "app-demo",
+  "version": "0.0.1",
+  "description": "A demo app to demonstrate outdated dependencies.",
+  "main": "index.js",
+  "dependencies": {
+    "underscore": "~1.4.0",
+    "mime": "1.2.7"
+  },
+  "author": "Joe Stanco"
+}

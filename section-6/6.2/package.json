@@ -1,0 +1,9 @@
+{
+  "name": "connect-web-server",
+  "version": "0.0.0",
+  "description": "Web server using Connect middleware",
+  "main": "app.js",
+  "dependencies": {
+    "connect": "~2.7.6"
+  }
+}

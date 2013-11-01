@@ -1,0 +1,14 @@
+
+  <div id="event-details">
+    <h1>{{= pageTitle }}</h1>
+
+    <div id="event-title">
+      <h3>{{= eventTitle }}</h3>
+      <span class="event-action-links">
+        <a class="glyphicon glyphicon-edit" href="/event/update/{{= eventId }}"></a>
+        <a class="glyphicon glyphicon-bin remove-link" href="/event/destroy/{{= eventId }}"></a>
+      </span>
+    </div>
+    <div id="event-date" class="cf">{{= eventDate }}</div>
+
+  </div>

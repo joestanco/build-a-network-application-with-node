@@ -1,0 +1,6 @@
+{
+  "name": "search",
+  "dependencies": {
+    "underscore": "1.5.1"
+  }
+}

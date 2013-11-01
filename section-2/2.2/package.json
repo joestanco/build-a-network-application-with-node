@@ -1,0 +1,4 @@
+{ 
+  "name" : "myLibrary",
+  "main" : "./lib/cool-library.js"
+}
