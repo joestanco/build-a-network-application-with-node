@@ -230,7 +230,7 @@ exports.destroy_event = function(req, res) {
     return;
   }
 
-  Event.remove(req.params.id, function(err, result) {
+  Event.remove({ _id: req.params.id }, function(err, result) {
     if (err) handleError(err);
     res.redirect("/events");
     return;

@@ -230,7 +230,7 @@ var RestAPI = function(config) {
         eventDate: moment(result.date).format("dddd, MMMM Do YYYY"),
         eventTitle: result.title,
         eventResponses: getResponses(result),
-        statuses: models.responseSchema.path('status').enumValues,
+        statuses: config.models.responseSchema.path('status').enumValues,
         err: sessionError
       });
 
@@ -260,7 +260,7 @@ var RestAPI = function(config) {
       return;
     }
 
-    Event.remove(req.params.id, function(err, result) {
+    Event.remove({ _id: req.params.id }, function(err, result) {
       if (err) handleError(err);
       res.redirect("/events");
       return;

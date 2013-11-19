@@ -121,7 +121,7 @@ var RestAPI = function(config) {
                 type: "new response",
                 eventId: updatedResult.id,
                 eventResponses: getResponses(updatedResult),
-                statuses: models.responseSchema.path('status').enumValues
+                statuses: config.models.responseSchema.path('status').enumValues
               };
             }
             callback(err, updatedResult, msg);
@@ -229,7 +229,7 @@ var RestAPI = function(config) {
         eventDate: moment(result.date).format("dddd, MMMM Do YYYY"),
         eventTitle: result.title,
         eventResponses: getResponses(result),
-        statuses: models.responseSchema.path('status').enumValues,
+        statuses: config.models.responseSchema.path('status').enumValues,
         err: sessionError
       });
 
@@ -259,7 +259,7 @@ var RestAPI = function(config) {
       return;
     }
 
-    Event.remove(req.params.id, function(err, result) {
+    Event.remove({ _id: req.params.id }, function(err, result) {
       if (err) handleError(err);
       res.redirect("/events");
       return;
